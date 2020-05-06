@@ -1,7 +1,8 @@
 try:
     file = open("data.txt", "r")
 except:
-    raise Exception("Cannot open file\n")
+    print("Cannot open file\n")
+    exit() 
 
 
 def Read_int(filename):
@@ -22,23 +23,26 @@ def Read_int(filename):
                     f+=1            
             except:
                 if (x!=' ') and (x!=''):
-                    raise Exception("Wrong data\n")
+                    print("Wrong data\n")
+                    exit()
                 
-            
 e1=None
 while (e1==None):        
     e1=Read_int(file)
     if (e1=='end'):
-        raise Exception("Empty file\n")
+        print ("Empty file\n")
+        exit()
 
 e2=None
 while (e2==None):        
     e2=Read_int(file)
     if (e2=='end'):
-        raise Exception("There is only one element\n")
+        print("There is only one element\n")
+        exit()
 
 if (e1==e2):
-    raise Exception("Elements are equal\n")
+    print("Elements are equal\n")
+    exit()
 
 
 one=0
@@ -56,9 +60,9 @@ while(c!='end'):
 
 
 if (one>two):
-    print("More elements equal to the first\n")
+    print("More elements equal to the first one\n")
 elif (two>one):
-    print("More elements equal to the second\n")
+    print("More elements equal to the second one\n")
 else:
     print("The values are equal\n")
 
